@@ -145,7 +145,6 @@ Other applications from the setup notes are available from their official pages:
 
 - [Scrcpy](https://github.com/Genymobile/scrcpy)
 - [NoSQLBooster](https://nosqlbooster.com/downloads)
-- [TeamViewer](https://www.teamviewer.com/en/download/linux/)
 - [Ngrok](https://ngrok.com/download)
 
 ## Development Tools
