@@ -23,9 +23,9 @@ This guide assumes a fresh Ubuntu 26.04 installation on a 64-bit system. Replace
 
 ```console
 sudo apt update
-sudo apt upgrade -y
-sudo apt install -y apt-transport-https ca-certificates curl file git software-properties-common zip wget
-sudo apt install -y snapd flatpak gnome-software-plugin-flatpak
+sudo apt upgrade
+sudo apt install apt-transport-https ca-certificates curl file git software-properties-common zip wget
+sudo apt install snapd flatpak gnome-software-plugin-flatpak
 sudo systemctl enable --now snapd.socket
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
@@ -36,7 +36,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 ```console
 curl -L --fail --show-error --progress-bar "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -o "./google-chrome-stable_current_amd64.deb"
-sudo apt install -y ./google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
 rm ./google-chrome-stable_current_amd64.deb
 ```
 
@@ -44,7 +44,7 @@ rm ./google-chrome-stable_current_amd64.deb
 
 ```console
 curl -L --fail --show-error --progress-bar "https://github.com/geek-fun/dockit/releases/download/v1.4.3/DocKit_1.4.3_amd64.deb" -o "./dockit.deb"
-sudo apt install ./dockit.deb -y
+sudo apt install ./dockit.deb
 rm ./dockit.deb
 ```
 
@@ -75,7 +75,7 @@ sudo snap install redisinsight
 ### Flameshot
 
 ```console
-flatpak install -y flathub org.flameshot.Flameshot
+flatpak install flathub org.flameshot.Flameshot
 ```
 
 Start a Flameshot screenshot:
@@ -87,25 +87,25 @@ flatpak run org.flameshot.Flameshot gui
 ### FileZilla
 
 ```console
-sudo apt install -y filezilla
+sudo apt install filezilla
 ```
 
 ### Guake
 
 ```console
-sudo apt install -y guake
+sudo apt install guake
 ```
 
 ### VirtualBox
 
 ```console
-sudo apt install -y virtualbox
+sudo apt install virtualbox
 ```
 
 ### PostgreSQL Client
 
 ```console
-sudo apt install -y postgresql-client
+sudo apt install postgresql-client
 ```
 
 ### DBeaver
@@ -137,8 +137,8 @@ sudo chown -R $USER:$USER /opt/android-studio
 ### Optional Applications
 
 ```console
-flatpak install -y flathub com.usebottles.bottles
-sudo apt install -y openfortivpn fonts-firacode
+flatpak install flathub com.usebottles.bottles
+sudo apt install openfortivpn fonts-firacode
 ```
 
 Other applications from the setup notes are available from their official pages:
@@ -154,11 +154,17 @@ Other applications from the setup notes are available from their official pages:
 ```console
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
-sudo apt install -y git
+sudo apt install git
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 git config --global init.defaultBranch main
 git config --global pull.rebase false
+```
+
+### Gitnuro
+
+```console
+flatpak install flathub com.jetpackduba.Gitnuro
 ```
 
 ### Java with SDKMAN!
@@ -238,7 +244,7 @@ Sign out and sign in again before using Docker as a non-root user.
 ### Zsh, Oh My Zsh, Zinit and Spaceship
 
 ```console
-sudo apt install -y git curl zsh fonts-firacode
+sudo apt install git curl zsh fonts-firacode
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -255,7 +261,7 @@ The Zsh configuration file is [`terminal/.zshrc`](terminal/.zshrc).
 
 ```console
 curl -L --fail --show-error --progress-bar "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ./vscode.deb
-sudo apt install -y ./vscode.deb
+sudo apt install ./vscode.deb
 rm ./vscode.deb
 ```
 
@@ -296,13 +302,13 @@ Follow the [OpenVPN 3 Linux documentation](https://community.openvpn.net/openvpn
 
 ```console
 sudo apt update
-sudo apt install -y apt-transport-https curl
+sudo apt install apt-transport-https curl
 sudo mkdir -p /etc/apt/keyrings
 curl -sSfL https://packages.openvpn.net/packages-repo.gpg | sudo tee /etc/apt/keyrings/openvpn.asc > /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/openvpn.asc] https://packages.openvpn.net/openvpn3/debian resolute main" \
   | sudo tee /etc/apt/sources.list.d/openvpn3.list
 sudo apt update
-sudo apt install -y openvpn3-client
+sudo apt install openvpn3-client
 ```
 
 ## Useful Commands
